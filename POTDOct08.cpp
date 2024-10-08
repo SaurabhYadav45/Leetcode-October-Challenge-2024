@@ -15,3 +15,17 @@ public:
         return (no_of_opening_bracket + 1)/2;
     }
 };
+
+
+                                  //  OPTIMIZED WAY
+
+        int stackSize = 0;
+        for(char& ch : s){
+            if(ch == '['){
+                stackSize++;
+            }
+            else{
+                if(stackSize > 0) stackSize--;
+            }
+        }
+        return (stackSize + 1)/2;
